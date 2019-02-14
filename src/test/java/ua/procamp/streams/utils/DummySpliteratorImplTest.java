@@ -61,7 +61,7 @@ public class DummySpliteratorImplTest {
 
     @Test
     public void forEachRemaining() {
-        spliterator.forEachRemaining(a);
+//        spliterator.forEachRemaining();
     }
 
     @Test

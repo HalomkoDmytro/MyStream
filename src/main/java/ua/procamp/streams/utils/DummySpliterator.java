@@ -19,5 +19,4 @@ public interface DummySpliterator {
 
     void forEachRemaining(IntConsumer action);
 
-    void doCurrent(IntConsumer action);
 }

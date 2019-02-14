@@ -103,10 +103,4 @@ public class DummySpliteratorImpl implements DummySpliterator {
         }
     }
 
-    @Override
-    public void doCurrent(IntConsumer action) {
-        Objects.requireNonNull(action);
-
-        action.accept(current.getItemValue());
-    }
 }
