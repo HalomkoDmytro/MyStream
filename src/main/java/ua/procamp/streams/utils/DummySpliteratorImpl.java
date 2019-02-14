@@ -67,12 +67,18 @@ public class DummySpliteratorImpl implements DummySpliterator {
         Objects.requireNonNull(toRemoveNode);
 
         if (size > 1) {
+            size--;
+
             if (toRemoveNode == first) {
                 first = first.getNext();
+                first.setPrev(null);
                 current = first;
+
                 return current;
             } else if (toRemoveNode == last) {
-                last = last.getNext();
+                last = last.getPrev();
+                last.setNext(null);
+
                 return null;
             } else {
                 Node previous = toRemoveNode.getPrev();
@@ -80,6 +86,7 @@ public class DummySpliteratorImpl implements DummySpliterator {
                 previous.setNext(second);
                 second.setPrev(previous);
                 current = second;
+
                 return current;
             }
         }
