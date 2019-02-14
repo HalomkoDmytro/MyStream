@@ -13,8 +13,6 @@ public interface DummySpliterator {
 
     Node remove(Node myNode);
 
-    Node getFirst();
-
     Node getCur();
 
     void goToFirst();

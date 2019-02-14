@@ -42,10 +42,6 @@ public class DummySpliteratorImpl implements DummySpliterator {
         current = first;
     }
 
-    @Override
-    public Node getFirst() {
-        return first;
-    }
 
     @Override
     public int getSize() {
@@ -69,6 +65,7 @@ public class DummySpliteratorImpl implements DummySpliterator {
     @Override
     public Node remove(Node toRemoveNode) {
         Objects.requireNonNull(toRemoveNode);
+
         if (size > 1) {
             if (toRemoveNode == first) {
                 first = first.getNext();
@@ -97,6 +94,8 @@ public class DummySpliteratorImpl implements DummySpliterator {
 
     @Override
     public void forEachRemaining(IntConsumer action) {
+        Objects.requireNonNull(action);
+
         Node temp = first;
         while (temp != null) {
             action.accept(temp.getItemValue());
@@ -106,6 +105,8 @@ public class DummySpliteratorImpl implements DummySpliterator {
 
     @Override
     public void doCurrent(IntConsumer action) {
+        Objects.requireNonNull(action);
+
         action.accept(current.getItemValue());
     }
 }
