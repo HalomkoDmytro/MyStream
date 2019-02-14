@@ -59,12 +59,4 @@ public class DummySpliteratorImplTest {
         assertEquals(expected, actual);
     }
 
-    @Test
-    public void forEachRemaining() {
-//        spliterator.forEachRemaining();
-    }
-
-    @Test
-    public void doCurrent() {
-    }
 }
